@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.github.com; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Cuts">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#26173a">
+<title>Cuts</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/img/icon-180.png">
+<link rel="icon" href="assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="assets/img/icon-64.png">
+<link rel="stylesheet" href="assets/css/statement.css?v=1.0.0">
+<link rel="stylesheet" href="assets/css/app.css?v=1.0.0">
+<link rel="stylesheet" href="assets/css/cuts.css?v=1.0.0">
+</head>
+<body>
+<div id="app"></div>
+<div id="modals"></div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<div class="drop-layer" id="drop-layer" hidden>
+  <div class="drop-card"><span class="ico" id="drop-ico"></span><b>Drop the invoices here</b><span>Cuts reads the total earnings from every PDF.</span></div>
+</div>
+<input class="file-input" id="file-input" type="file" accept="application/pdf,.pdf" multiple tabindex="-1" aria-hidden="true">
+<div id="print-root"></div>
+<script src="assets/icons.js?v=1.0.0"></script>
+<script type="module" src="assets/js/app.js?v=1.0.0"></script>
+</body>
+</html>

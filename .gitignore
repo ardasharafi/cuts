@@ -1,0 +1,5 @@
+dist/
+build/png/
+build/cuts.res
+*.syso
+*.exe

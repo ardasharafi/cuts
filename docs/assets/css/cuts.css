@@ -1,0 +1,41 @@
+/* Cuts — the few rules the kit does not have. Built from the same tokens:
+   no new colors, radii, shadows or fonts. Linked after statement.css and app.css. */
+
+.file-input { position: fixed; left: -9999px; top: 0; width: 1px; height: 1px; opacity: 0; }
+
+/* the share field in the table: a percentage needs less room than a rate */
+.rate-input.pct { width: 96px; }
+
+/* dropping files on the window */
+.drop-layer { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; padding: 24px; background: rgba(27, 16, 43, 0.4); animation: fade-in 0.16s ease-out; }
+.drop-card { pointer-events: none; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; width: min(440px, 94vw); padding: 30px 28px 28px; background: #fff; border-radius: 18px; box-shadow: var(--shadow-pop); color: var(--ink-2); }
+.drop-card .ico { width: 40px; height: 40px; margin-bottom: 6px; border-radius: 11px; display: grid; place-items: center; background: var(--violet-soft); color: var(--plum-700); }
+.drop-card b { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.15; color: var(--ink); }
+
+/* the statement preview as a page of its own */
+.sheet-page { max-width: calc(210mm + 36px); }
+.sheet-page .sheet-scale { width: 210mm; }
+
+/* settings */
+.set-value { line-height: 38px; }
+.folder-row { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; min-width: 0; }
+.folder-row .mono-box { align-self: stretch; }
+.settings .notice { margin-bottom: 4px; }
+
+/* when the app behind the window has stopped */
+.gone .logo-mark { margin-bottom: 14px; }
+.gone p { margin: 0; color: rgba(255, 255, 255, 0.75); }
+
+/* iPhone: three tabs instead of seven */
+.phone-tabs.tabs-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.is-phone .rate-input.pct { width: 110px; }
+.is-phone .lock-card .row.wrap .btn { flex: 1 1 auto; }
+.is-phone .qr-wrap { justify-content: center; }
+
+/* printing: only the statement goes on paper */
+#print-root { display: none; }
+@media print {
+  html, body { background: #fff !important; }
+  #app, #modals, #toasts, .drop-layer, .tip, .gone { display: none !important; }
+  #print-root { display: block; }
+}

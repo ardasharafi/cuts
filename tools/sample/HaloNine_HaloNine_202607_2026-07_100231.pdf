@@ -1,0 +1,156 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 4198 >>
+stream
+BT /F2 17 Tf 1 0 0 1 20.2 801.6 Tm (Invoice) Tj ET
+BT /F1 10 Tf 1 0 0 1 92.2 799.4 Tm (Detailed Report) Tj ET
+BT /F1 9 Tf 1 0 0 1 49.5 45.5 Tm (support@example.com) Tj ET
+BT /F1 9 Tf 1 0 0 1 465 45.5 Tm (Print Date) Tj ET
+BT /F1 9 Tf 1 0 0 1 541.1 45.5 Tm (Page No.) Tj ET
+BT /F1 9 Tf 1 0 0 1 18.3 45.5 Tm (E-mail:) Tj ET
+BT /F1 9 Tf 1 0 0 1 464 31.3 Tm (2026-10-2) Tj ET
+BT /F1 9 Tf 1 0 0 1 528.4 31.3 Tm (Page 1 of 2) Tj ET
+BT /F1 10 Tf 1 0 0 1 18.5 756.7 Tm (Billed to:) Tj ET
+BT /F2 12 Tf 1 0 0 1 64.2 756.1 Tm (HaloNine_HaloNine_202607) Tj ET
+BT /F1 10 Tf 1 0 0 1 18.5 719.8 Tm (Accounting Period:) Tj ET
+BT /F1 10 Tf 1 0 0 1 109.2 719.8 Tm (2026-09) Tj ET
+BT /F1 10 Tf 1 0 0 1 18.5 736.8 Tm (Reporting Period:) Tj ET
+BT /F1 10 Tf 1 0 0 1 103.5 736.8 Tm (2026-07) Tj ET
+BT /F1 10 Tf 1 0 0 1 455.1 753.9 Tm (Customer ID) Tj ET
+BT /F1 10 Tf 1 0 0 1 460.5 736.8 Tm (Contract ID) Tj ET
+BT /F1 10 Tf 1 0 0 1 460.9 719.8 Tm (Invoice No.) Tj ET
+BT /F2 11 Tf 1 0 0 1 547.3 753.5 Tm (40112) Tj ET
+BT /F2 11 Tf 1 0 0 1 547.3 736.5 Tm (40110) Tj ET
+BT /F2 11 Tf 1 0 0 1 541.5 719.5 Tm (100231) Tj ET
+BT /F2 12 Tf 1 0 0 1 211.6 671 Tm (Extra Expense List) Tj ET
+BT /F1 10 Tf 1 0 0 1 211.3 651.8 Tm (Title) Tj ET
+BT /F1 10 Tf 1 0 0 1 340 651.8 Tm (Total) Tj ET
+BT /F1 10 Tf 1 0 0 1 211.3 634.4 Tm (Invoice) Tj ET
+BT /F1 10 Tf 1 0 0 1 211.3 623.6 Tm (Amendment) Tj ET
+BT /F1 10 Tf 1 0 0 1 433.7 629 Tm (0.00 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 373.7 629 Tm (100) Tj ET
+BT /F2 12 Tf 1 0 0 1 427.4 605.6 Tm (0.00 \200) Tj ET
+BT /F2 10 Tf 1 0 0 1 211.3 606.2 Tm (Sum) Tj ET
+BT /F2 12 Tf 1 0 0 1 211.6 563.1 Tm (Payment List) Tj ET
+BT /F1 10 Tf 1 0 0 1 381.2 651.8 Tm (%) Tj ET
+BT /F1 10 Tf 1 0 0 1 430.4 651.8 Tm (Amount) Tj ET
+BT /F1 10 Tf 1 0 0 1 517.5 651.8 Tm (Description) Tj ET
+BT /F1 10 Tf 1 0 0 1 211.3 543.8 Tm (Title) Tj ET
+BT /F1 10 Tf 1 0 0 1 419.4 543.8 Tm (Total) Tj ET
+BT /F1 10 Tf 1 0 0 1 461.4 543.8 Tm (XR) Tj ET
+BT /F1 10 Tf 1 0 0 1 532.4 543.8 Tm (Amount) Tj ET
+BT /F1 10 Tf 1 0 0 1 211.3 524 Tm (Bank) Tj ET
+BT /F1 10 Tf 1 0 0 1 403.6 524 Tm (575.53 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 456.1 524 Tm (1.00) Tj ET
+BT /F1 10 Tf 1 0 0 1 528.3 524 Tm (575.53 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 302.1 524 Tm (2026/10/02) Tj ET
+BT /F2 10 Tf 1 0 0 1 528.3 504.1 Tm (575.53 \200) Tj ET
+BT /F2 10 Tf 1 0 0 1 211.3 504.1 Tm (Sum) Tj ET
+BT /F2 10 Tf 1 0 0 1 403.6 504.1 Tm (575.53 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 211.3 458.8 Tm (Remaining Amount:) Tj ET
+BT /F2 16 Tf 1 0 0 1 308.7 457 Tm (0.00 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 329.8 543.8 Tm (Date) Tj ET
+BT /F1 10 Tf 1 0 0 1 18.5 649 Tm (Contract Share) Tj ET
+BT /F1 10 Tf 1 0 0 1 18.5 632 Tm (Customer Share) Tj ET
+BT /F1 10 Tf 1 0 0 1 18.5 666 Tm (Total Earnings) Tj ET
+BT /F2 12 Tf 1 0 0 1 18.9 682.4 Tm (Earnings) Tj ET
+BT /F1 10 Tf 1 0 0 1 18.5 484.6 Tm (Pre-Payment) Tj ET
+BT /F2 12 Tf 1 0 0 1 18.9 608.7 Tm (Extras) Tj ET
+BT /F1 10 Tf 1 0 0 1 18.5 433.5 Tm (Exchange Amount) Tj ET
+BT /F1 10 Tf 1 0 0 1 159.1 484.6 Tm (0.00 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 148.5 649 Tm (246.66 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 148.5 632 Tm (575.53 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 148.5 433.5 Tm (575.53 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 18.5 558.3 Tm (VAT) Tj ET
+BT /F1 10 Tf 1 0 0 1 18.5 541.3 Tm (TAX) Tj ET
+BT /F1 10 Tf 1 0 0 1 18.5 575.3 Tm (Extra Credits) Tj ET
+BT /F1 10 Tf 1 0 0 1 159.1 558.3 Tm (0.00 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 159.1 541.3 Tm (0.00 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 148.5 666 Tm (822.19 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 159.1 575.3 Tm (0.00 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 18.5 592.3 Tm (Extra Debts) Tj ET
+BT /F1 10 Tf 1 0 0 1 18.5 450.5 Tm (Cleared Amount) Tj ET
+BT /F1 10 Tf 1 0 0 1 18.5 467.6 Tm (Uncleared Balance) Tj ET
+BT /F2 12 Tf 1 0 0 1 18.9 518 Tm (Balance) Tj ET
+BT /F1 10 Tf 1 0 0 1 18.5 382.5 Tm (Payable Amount) Tj ET
+BT /F1 10 Tf 1 0 0 1 159.1 592.3 Tm (0.00 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 148.5 450.5 Tm (575.53 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 159.1 467.6 Tm (0.00 \200) Tj ET
+BT /F2 12 Tf 1 0 0 1 140.7 381.9 Tm (575.53 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 18.5 501.6 Tm (Invoice Balance) Tj ET
+BT /F1 10 Tf 1 0 0 1 148.5 501.6 Tm (575.53 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 18.5 405.2 Tm (Uninclusive for clearance) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 1806 >>
+stream
+BT /F2 17 Tf 1 0 0 1 20.2 801.6 Tm (Invoice) Tj ET
+BT /F1 10 Tf 1 0 0 1 92.2 799.4 Tm (Detailed Report) Tj ET
+BT /F1 9 Tf 1 0 0 1 49.5 45.5 Tm (support@example.com) Tj ET
+BT /F1 9 Tf 1 0 0 1 465 45.5 Tm (Print Date) Tj ET
+BT /F1 9 Tf 1 0 0 1 541.1 45.5 Tm (Page No.) Tj ET
+BT /F1 9 Tf 1 0 0 1 18.3 45.5 Tm (E-mail:) Tj ET
+BT /F1 9 Tf 1 0 0 1 464 31.3 Tm (2026-10-2) Tj ET
+BT /F1 9 Tf 1 0 0 1 528.4 31.3 Tm (Page 2 of 2) Tj ET
+BT /F1 10 Tf 1 0 0 1 29.9 734 Tm (Total Earning) Tj ET
+BT /F1 10 Tf 1 0 0 1 159.8 734 Tm (822.19 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 29.9 717 Tm (Contract Share) Tj ET
+BT /F1 10 Tf 1 0 0 1 214.1 700 Tm (Earning VAT) Tj ET
+BT /F1 10 Tf 1 0 0 1 214.1 683 Tm (Earning TAX) Tj ET
+BT /F1 10 Tf 1 0 0 1 159.8 717 Tm (246.66 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 354.7 683 Tm (0.00 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 354.7 700 Tm (0.00 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 29.9 700 Tm (Customer Share) Tj ET
+BT /F1 10 Tf 1 0 0 1 214.1 734 Tm (Extra Debts) Tj ET
+BT /F1 10 Tf 1 0 0 1 214.1 717 Tm (Extra Credits) Tj ET
+BT /F1 10 Tf 1 0 0 1 354.7 717 Tm (0.00 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 159.8 700 Tm (575.53 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 354.7 734 Tm (0.00 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 398.4 734 Tm (Invoice Balance) Tj ET
+BT /F1 10 Tf 1 0 0 1 398.4 717 Tm (Uncleared Balance) Tj ET
+BT /F1 10 Tf 1 0 0 1 29.9 643.3 Tm (Payable Amount) Tj ET
+BT /F1 10 Tf 1 0 0 1 528.3 734 Tm (575.53 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 538.9 717 Tm (0.00 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 398.4 700 Tm (Cleared Amount) Tj ET
+BT /F1 10 Tf 1 0 0 1 398.4 683 Tm (Exchanged Amount) Tj ET
+BT /F2 16 Tf 1 0 0 1 110.3 641.5 Tm (575.53 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 528.3 700 Tm (575.53 \200) Tj ET
+BT /F1 10 Tf 1 0 0 1 528.3 683 Tm (575.53 \200) Tj ET
+BT /F2 12 Tf 1 0 0 1 30.2 756.1 Tm (All Invoices Summary) Tj ET
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000218 00000 n 
+0000000320 00000 n 
+0000000462 00000 n 
+0000004712 00000 n 
+0000004854 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R /Info << /Title (Sample invoice with invented data) >> >>
+startxref
+6712
+%%EOF
