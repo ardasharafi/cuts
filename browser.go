@@ -99,12 +99,14 @@ func (a *app) printPDF(sheet, title string) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	defer os.RemoveAll(work)
-	out := filepath.Join(work, "statement.pdf")
+	defer removeLater(work)
 	url := a.baseURL() + "/print/" + id
 
 	var last error
-	for _, browser := range browsers {
+	for i, browser := range browsers {
+		// each try has its own profile and its own file: an earlier browser may still be
+		// holding on to what it was given
+		out := filepath.Join(work, fmt.Sprintf("statement-%d.pdf", i))
 		args := []string{
 			"--headless=new",
 			"--disable-gpu",
@@ -113,7 +115,7 @@ func (a *app) printPDF(sheet, title string) ([]byte, error) {
 			"--disable-extensions",
 			"--disable-sync",
 			"--disable-background-networking",
-			"--user-data-dir=" + filepath.Join(work, "profile"),
+			"--user-data-dir=" + filepath.Join(work, fmt.Sprintf("profile-%d", i)),
 			"--no-pdf-header-footer",
 			"--print-to-pdf-no-header",
 			"--virtual-time-budget=4000",
@@ -124,17 +126,93 @@ func (a *app) printPDF(sheet, title string) ([]byte, error) {
 		ctx, cancel := context.WithTimeout(context.Background(), 60*time.Second)
 		cmd := exec.CommandContext(ctx, browser, args...)
 		quiet(cmd)
+		started := time.Now()
 		output, runErr := cmd.CombinedOutput()
 		cancel()
-		data, readErr := os.ReadFile(out)
-		if readErr == nil && len(data) > 800 && strings.HasPrefix(string(data[:5]), "%PDF-") {
+		// On Windows the program that was started can return at once and leave the printing
+		// to another process, so the file is given time to arrive. A browser that failed
+		// outright (it took a while and left nothing) gets a shorter wait.
+		wait := 30 * time.Second
+		if runErr != nil && time.Since(started) > 5*time.Second {
+			wait = 3 * time.Second
+		}
+		data, readErr := waitForPDF(out, wait)
+		if readErr == nil {
 			return data, nil
 		}
-		last = fmt.Errorf("%s: %v %v %s", filepath.Base(browser), runErr, readErr, strings.TrimSpace(string(output)))
+		last = fmt.Errorf("%s: %v; %v; %s", filepath.Base(browser), runErr, readErr, strings.TrimSpace(string(output)))
 		log.Printf("pdf: %v", last)
-		_ = os.Remove(out)
 	}
 	return nil, last
+}
+
+// waitForPDF returns the file once it is a whole PDF: it starts and ends as one, and it has
+// stopped growing.
+func waitForPDF(path string, limit time.Duration) ([]byte, error) {
+	deadline := time.Now().Add(limit)
+	lastSize := -1
+	for {
+		data, err := os.ReadFile(path)
+		if err == nil && wholePDF(data) {
+			if len(data) == lastSize {
+				return data, nil
+			}
+			lastSize = len(data)
+		} else {
+			lastSize = -1
+		}
+		if time.Now().After(deadline) {
+			if err == nil {
+				err = errors.New("the PDF was not finished in time")
+			}
+			return nil, err
+		}
+		time.Sleep(150 * time.Millisecond)
+	}
+}
+
+func wholePDF(data []byte) bool {
+	if len(data) < 800 || !strings.HasPrefix(string(data[:5]), "%PDF-") {
+		return false
+	}
+	tail := data
+	if len(tail) > 1024 {
+		tail = tail[len(tail)-1024:]
+	}
+	return strings.Contains(string(tail), "%%EOF")
+}
+
+// removeLater deletes a work folder. The browser that printed may hold its files for a few
+// more seconds, so the delete is tried again in the background.
+func removeLater(dir string) {
+	if os.RemoveAll(dir) == nil {
+		if _, err := os.Stat(dir); os.IsNotExist(err) {
+			return
+		}
+	}
+	go func() {
+		for _, pause := range []time.Duration{2, 5, 15, 30, 60} {
+			time.Sleep(pause * time.Second)
+			if os.RemoveAll(dir) == nil {
+				if _, err := os.Stat(dir); os.IsNotExist(err) {
+					return
+				}
+			}
+		}
+	}()
+}
+
+// clearPrintLeftovers removes work folders an earlier run could not delete.
+func (a *app) clearPrintLeftovers() {
+	entries, err := os.ReadDir(a.cacheDir)
+	if err != nil {
+		return
+	}
+	for _, e := range entries {
+		if e.IsDir() && strings.HasPrefix(e.Name(), "print-") {
+			_ = os.RemoveAll(filepath.Join(a.cacheDir, e.Name()))
+		}
+	}
 }
 
 /* ---------------------------------------------------------------- another Cuts already running */

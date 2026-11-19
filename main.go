@@ -25,7 +25,7 @@ import (
 
 const (
 	appName       = "Cuts"
-	appVersion    = "1.0.0"
+	appVersion    = "1.0.1"
 	preferredPort = 47615
 )
 
@@ -78,6 +78,7 @@ func main() {
 	a.port = ln.Addr().(*net.TCPAddr).Port
 	log.Printf("%s %s listening on 127.0.0.1:%d", appName, appVersion, a.port)
 	a.dailyCopy()
+	go a.clearPrintLeftovers()
 
 	server := &http.Server{Handler: a.routes(), ReadHeaderTimeout: 15 * time.Second}
 	go func() {

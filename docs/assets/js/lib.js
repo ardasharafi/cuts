@@ -2,7 +2,7 @@
    No DOM access in this file, so it can be tested on its own. */
 
 export const APP_NAME = 'Cuts';
-export const APP_VERSION = '1.0.0';
+export const APP_VERSION = '1.0.1';
 
 /* ---------------------------------------------------------------- text */
 
