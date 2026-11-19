@@ -109,7 +109,7 @@ eq(await text('.empty-title'), 'No invoices yet');
 // ---- the invoice, the share
 await page.setInputFiles('#file-input', INVOICE);
 await page.waitForSelector('tbody tr', { timeout: 30000 });
-ok((await text('tbody tr')).includes('HaloNine July 2026, invoice 100231 €822.19'), 'row: ' + await text('tbody tr'));
+ok((await text('tbody tr')).includes('HaloNine July 2026 (07/2026), invoice 100231 €822.19'), 'row: ' + await text('tbody tr'));
 ok(await page.evaluate(() => document.activeElement && document.activeElement.dataset.input === 'pct'), 'the share field has the focus');
 await page.keyboard.type('۱۰');           // Persian digits, as a Persian keyboard would send them
 await page.waitForTimeout(250);
@@ -138,7 +138,7 @@ await addByHand('Aster', '200.38', '3');
 await addByHand('Teal', '2,662.84', '17');
 await addByHand('Goldmoth', '327,33', '');
 eq(await page.locator('tbody tr').count(), 4);
-eq(await text('.page-sub'), '4 artists in July 2026, 1 without a share');
+eq(await text('.page-sub'), '4 artists in July 2026 (07/2026), 1 without a share');
 eq(await text('.nav-item.active .nav-count'), '1');
 ok((await text('.notice')).startsWith('1 artist has no share yet.'), 'notice');
 // 82.22 + 6.01 + 452.68 = 540.91
@@ -191,7 +191,7 @@ await shot('09-saved');
 let pdf = PDFS + '/Manager statement - July 2026.pdf';
 ok(existsSync(pdf), 'the PDF is in the folder');
 let pdfText = execFileSync('pdftotext', ['-layout', pdf, '-']).toString();
-for (const piece of ['Manager statement', 'Statement for', 'July 2026', '10 Tir – 9 Mordad 1405', 'HaloNine', '100231', '€822.19', '10%', '€82.22', 'Goldmoth', '12.5%', '€40.92', 'Total', '€4,012.74', '€581.83', 'Amounts in euros']) {
+for (const piece of ['Manager statement', 'Statement for', 'July 2026 (07/2026)', '10 Tir – 9 Mordad 1405', 'HaloNine', '100231', '€822.19', '10%', '€82.22', 'Goldmoth', '12.5%', '€40.92', 'Total', '€4,012.74', '€581.83', 'Amounts in euros']) {
   ok(pdfText.includes(piece), 'PDF has "' + piece + '"');
 }
 const fonts = execFileSync('pdffonts', [pdf]).toString();
@@ -303,7 +303,7 @@ await page.fill('#unlock-pw', 'open sesame');
 await page.click('[data-act="unlock"]');
 await page.waitForSelector('tbody tr');
 eq(await page.locator('tbody tr').count(), 4);
-eq(await text('.hero-label'), 'Morrow’s share for July 2026');
+eq(await text('.hero-label'), 'Morrow’s share for July 2026 (07/2026)');
 
 // ---- the helper turns strangers away
 const H = { Host: '127.0.0.1:47615' };

@@ -92,16 +92,18 @@ console.log('jalali cross-checked for', checked, 'days');
 eq(lib.jalaliRange(2026, 11, 1, 2026, 11, 30), '10 Aban – 9 Azar 1405');
 eq(lib.formatJalali(new Date(2026, 10, 19)), '28 Aban 1405');
 eq(lib.formatDate(new Date(2026, 10, 19)), 'Nov 19, 2026');
-eq(lib.periodSpan(['2026-07']).label, 'July 2026');
+eq(lib.periodSpan(['2026-07']).label, 'July 2026 (07/2026)');
+eq(lib.periodSpan(['2026-07']).plain, 'July 2026');
 eq(lib.periodSpan(['2026-07']).jalali, '10 Tir – 9 Mordad 1405');
-eq(lib.periodSpan(['2026-07', '2026-09', '2026-07']).label, 'Jul – Sep 2026');
-eq(lib.periodSpan(['2025-12', '2026-02']).label, 'Dec 2025 – Feb 2026');
+eq(lib.periodSpan(['2026-07', '2026-09', '2026-07']).label, 'Jul – Sep 2026 (07/2026 – 09/2026)');
+eq(lib.periodSpan(['2025-12', '2026-02']).label, 'Dec 2025 – Feb 2026 (12/2025 – 02/2026)');
 eq(lib.periodSpan(['2026-03']).jalali, '10 Esfand 1404 – 11 Farvardin 1405');
-eq(lib.periodSpan([], '2026-11').label, 'November 2026');
+eq(lib.periodSpan([], '2026-11').label, 'November 2026 (11/2026)');
 eq(lib.parsePeriod('2026-07'), '2026-07');
 eq(lib.parsePeriod('2026-7'), '2026-07');
 eq(lib.parsePeriod('2026-13'), null);
-eq(lib.periodLabel('2026-07'), 'July 2026');
+eq(lib.periodLabel('2026-07'), 'July 2026 (07/2026)');
+eq(lib.periodNumber('2026-7'), '07/2026');
 
 // ---- names
 eq(lib.cleanBilledName('HaloNine_HaloNine_202607'), 'HaloNine');
@@ -159,7 +161,7 @@ const t = lib.totalsByCurrency(rows);
 eq(t.length, 1); eq(t[0].earnings, 82219 + 20038 + 266284); eq(t[0].amount, 8222 + 33286); eq(t[0].counted, 2);
 const html = lib.statementHTML({ business: '', manager: 'Morrow', issued: new Date(2026, 10, 19), rows });
 assert.ok(html.includes('<h1 class="st-name">Morrow</h1>')); n += 1;
-assert.ok(html.includes('July 2026') && html.includes('10 Tir – 9 Mordad 1405')); n += 1;
+assert.ok(html.includes('July 2026 (07/2026)') && html.includes('10 Tir – 9 Mordad 1405')); n += 1;
 assert.ok(html.includes('€415.08')); n += 1;    // 82.22 + 332.86
 assert.ok(html.includes('1 artist without a share is not counted')); n += 1;
 eq(lib.statementFileName({ manager: 'Morrow', issued: new Date(2026, 10, 19), rows }), 'Manager Morrow - July 2026');

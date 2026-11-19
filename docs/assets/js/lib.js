@@ -2,7 +2,7 @@
    No DOM access in this file, so it can be tested on its own. */
 
 export const APP_NAME = 'Cuts';
-export const APP_VERSION = '1.0.1';
+export const APP_VERSION = '1.0.2';
 
 /* ---------------------------------------------------------------- text */
 
@@ -246,10 +246,17 @@ export function parsePeriod(value) {
   return year + '-' + String(month).padStart(2, '0');
 }
 
+/* "2026-07" → "07/2026" */
+export function periodNumber(period) {
+  const p = parsePeriod(period);
+  return p ? p.slice(5) + '/' + p.slice(0, 4) : '';
+}
+
+/* "2026-07" → "July 2026 (07/2026)": the month by name and in numbers, side by side. */
 export function periodLabel(period) {
   const p = parsePeriod(period);
   if (!p) return '';
-  return MONTHS[Number(p.slice(5)) - 1] + ' ' + p.slice(0, 4);
+  return MONTHS[Number(p.slice(5)) - 1] + ' ' + p.slice(0, 4) + ' (' + periodNumber(p) + ')';
 }
 
 export function currentPeriod(date = new Date()) {
@@ -268,8 +275,10 @@ export function periodSpan(periods, fallback) {
   if (first === last) label = MONTHS[fm - 1] + ' ' + fy;
   else if (fy === ly) label = MONTHS_SHORT[fm - 1] + ' – ' + MONTHS_SHORT[lm - 1] + ' ' + ly;
   else label = MONTHS_SHORT[fm - 1] + ' ' + fy + ' – ' + MONTHS_SHORT[lm - 1] + ' ' + ly;
+  const numbers = first === last ? periodNumber(first) : periodNumber(first) + ' – ' + periodNumber(last);
   return {
-    label,
+    label: label + ' (' + numbers + ')',
+    plain: label,          // without the numbers, for file names
     jalali: jalaliRange(fy, fm, 1, ly, lm, daysInMonth(ly, lm)),
     single: first === last,
     first,
@@ -479,5 +488,5 @@ export function statementHTML(model) {
 export function statementFileName(model) {
   const span = periodSpan(model.rows.map((r) => r.period), currentPeriod(model.issued));
   const manager = (model.manager || '').trim();
-  return safeFileName((manager ? 'Manager ' + manager : 'Manager statement') + ' - ' + span.label.replace(/–/g, 'to'));
+  return safeFileName((manager ? 'Manager ' + manager : 'Manager statement') + ' - ' + span.plain.replace(/–/g, 'to'));
 }
